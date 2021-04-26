@@ -1,5 +1,5 @@
 # docker-troubleshooting
-Used to build a Docker image for troubleshooting.
+Used to build a Docker image containing various tools for troubleshooting.
 
 <h2> Build the image </h2>
 
