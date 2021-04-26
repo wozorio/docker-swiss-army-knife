@@ -1,5 +1,5 @@
 # docker-troubleshooting
-Builds a Docker image for troubleshooting.
+Used to build a Docker image for troubleshooting.
 
 To build the image run:
 ```bash
