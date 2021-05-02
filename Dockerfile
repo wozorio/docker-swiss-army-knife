@@ -3,9 +3,9 @@ FROM debian:stable-slim
 LABEL author="well.ozorio@gmail.com"
 LABEL version="1.0.0"
 
-RUN apt update && \
-    apt dist-upgrade -y && \
-    apt install -y \
+RUN apt update \
+    && apt dist-upgrade -y \
+    && apt install -y \
     traceroute \
     curl \
     wget \
@@ -24,9 +24,9 @@ RUN apt update && \
     openssl \
     openssh-client \ 
     nvi \
-    less && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
+    less \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY Dockerfile /Dockerfile
 
