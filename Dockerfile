@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-LABEL author="Wellington Ozorio <well.ozorio@gmail.com>"
+LABEL author="well.ozorio@gmail.com"
 LABEL version="1.0.0"
 
 RUN apt update && \
