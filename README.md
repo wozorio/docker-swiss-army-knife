@@ -1,5 +1,6 @@
-# docker-troubleshooting
-Used to build a Docker image containing various tools which are useful for troubleshooting.
+# Docker: Swiss Army Knife
+
+This repository is used to build a Ubuntu-based docker image containing various tools which are useful for troubleshooting.
 
 ## Build the image
 
