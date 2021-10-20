@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM ubuntu:xenial
 
 LABEL author="well.ozorio@gmail.com"
 LABEL version="1.0.0"
@@ -25,6 +25,12 @@ RUN apt update \
     openssh-client \ 
     nvi \
     less \
+    # Install tcping
+    tcptraceroute \
+    bc \
+    && wget http://www.vdberg.org/~richard/tcpping -O /usr/local/bin/tcping \
+    && chmod 755 /usr/local/bin/tcping \
+    # Clean up cache and temporary files
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
