@@ -10,7 +10,7 @@ This repository is used to build a Ubuntu-based docker image containing various 
 docker build --no-cache -t wozorio/swiss-army-knife:1.0.0 .
 ```
 
-## Push the image to Docker hub
+## Push the image to Docker Hub
 
 ```bash
 docker login
