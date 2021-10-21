@@ -26,5 +26,5 @@ docker run -it --rm wozorio/swiss-army-knife:1.0.0 /bin/bash
 ## Run pod interactively on Kubernetes
 
 ```bash
-kubectl run -it --rm swiss-army-knife --image=wozorio/swiss-army-knife:1.0.0 -- /bin/bash
+kubectl run --name -it --rm swiss-army-knife --image=wozorio/swiss-army-knife:1.0.0 -- /bin/bash
 ```
