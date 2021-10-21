@@ -20,7 +20,7 @@ docker image push wozorio/swiss-army-knife:1.0.0
 ## Run container interactively on Docker
 
 ```bash
-docker run --name -it --rm wozorio/swiss-army-knife:1.0.0 /bin/bash
+docker run --name swiss-army-knife -it --rm wozorio/swiss-army-knife:1.0.0 /bin/bash
 ```
 
 ## Run pod interactively on Kubernetes
