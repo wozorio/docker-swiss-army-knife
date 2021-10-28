@@ -3,9 +3,11 @@ FROM ubuntu:xenial
 LABEL author="well.ozorio@gmail.com"
 LABEL version="1.0.0"
 
+WORKDIR /root
+
 RUN apt update \
     && apt dist-upgrade -y \
-    && apt install -y \
+    && apt install --no-install-recommends -y \
     traceroute \
     curl \
     wget \
