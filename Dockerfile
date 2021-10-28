@@ -11,6 +11,7 @@ RUN apt update \
     traceroute \
     curl \
     wget \
+    iputils-ping \
     dnsutils \
     netcat-openbsd \
     jq \
