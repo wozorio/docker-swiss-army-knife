@@ -1,6 +1,7 @@
 # Docker: Swiss Army Knife
 
 [![GitHub](https://img.shields.io/github/license/wozorio/docker-swiss-army-knife)](https://github.com/wozorio/docker-swiss-army-knife/blob/master/LICENSE)
+[![Build](https://github.com/wozorio/docker-swiss-army-knife/actions/workflows/build.yaml/badge.svg)](https://github.com/wozorio/docker-swiss-army-knife/actions/workflows/build.yaml)
 
 This repository is used to build a Ubuntu-based docker image containing various tools which are useful for troubleshooting.
 
