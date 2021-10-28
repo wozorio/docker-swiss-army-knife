@@ -30,6 +30,5 @@ jobs:
         with:
           context: ./
           file: Dockerfile
-          platforms: linux/amd64
-          push: false
+          push: true
           tags: docker-swiss-army-knife:latest
