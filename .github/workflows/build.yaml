@@ -21,9 +21,7 @@ jobs:
 
       - name: Set image tag
         run: |
-          export TAG=$(cat Dockerfile | grep -o 'version.*' | cut -f2- -d=)
-          echo "::set-env name=TAG::$TAG"
-          echo "The following image tag will be used: $TAG"
+          TAG=$(cat Dockerfile | grep -o 'version.*' | cut -f2- -d=) >> $GITHUB_ENV
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -37,4 +35,4 @@ jobs:
           context: ./
           file: Dockerfile
           push: true
-          tags: wozorio/swiss-army-knife:$TAG
+          tags: wozorio/swiss-army-knife:${{ env.TAG }}
