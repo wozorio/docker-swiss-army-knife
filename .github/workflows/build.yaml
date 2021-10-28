@@ -26,7 +26,7 @@ jobs:
 
       - name: Print tag var
         run: |
-          echo "${{ steps.var.outputs.TAG }}"
+          echo ${{ steps.var.outputs.TAG }}
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -41,4 +41,3 @@ jobs:
           file: Dockerfile
           push: true
           tags: wozorio/swiss-army-knife:${{ steps.var.outputs.TAG }}
-  
