@@ -31,4 +31,4 @@ jobs:
           context: ./
           file: Dockerfile
           push: true
-          tags: docker-swiss-army-knife:latest
+          tags: wozorio/swiss-army-knife:latest
