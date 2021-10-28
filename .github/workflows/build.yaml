@@ -22,7 +22,7 @@ jobs:
       - name: Set tag variable
         id: var
         run: |
-          echo ::set-output name=TAG::$(cat Dockerfile | grep -o 'version.*' | cut -f2- -d=)
+          echo ::set-output name=TAG::$(cat Dockerfile | grep -o 'version.*' | cut -f2- -d= | tr -d '"')
 
       - name: Print tag var
         run: |
