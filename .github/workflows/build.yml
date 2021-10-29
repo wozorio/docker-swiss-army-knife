@@ -19,11 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set image tag variable
-        id: var
-        run: |
-          echo ::set-output name=TAG::$(cat Dockerfile | grep -o 'version.*' | cut -f2- -d= | tr -d '"')
-
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
@@ -36,4 +31,4 @@ jobs:
           context: ./
           file: Dockerfile
           push: true
-          tags: wozorio/swiss-army-knife:${{ steps.var.outputs.TAG }}
+          tags: wozorio/swiss-army-knife:latest
