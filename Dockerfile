@@ -1,7 +1,6 @@
 FROM ubuntu:xenial
 
 LABEL author="well.ozorio@gmail.com"
-LABEL version="1.0.0"
 
 WORKDIR /root
 
