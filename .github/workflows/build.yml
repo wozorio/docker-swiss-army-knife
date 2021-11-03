@@ -35,8 +35,8 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
 
-  build:
-    name: Build
+  release:
+    name: Release
     runs-on: ubuntu-latest
     needs: test
     if: github.ref == 'refs/heads/master'
