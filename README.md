@@ -18,13 +18,13 @@ docker login
 docker image push wozorio/swiss-army-knife:latest
 ```
 
-## Run container interactively on Docker
+## Run a container interactively on Docker
 
 ```bash
 docker run --name swiss-army-knife -it --rm wozorio/swiss-army-knife:latest /bin/bash
 ```
 
-## Run pod interactively on Kubernetes
+## Run a pod interactively on Kubernetes
 
 ```bash
 kubectl run -it --rm swiss-army-knife --image=wozorio/swiss-army-knife:latest -- /bin/bash
