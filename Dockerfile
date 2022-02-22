@@ -8,6 +8,7 @@ RUN apt update \
     && apt dist-upgrade -y \
     && apt install --no-install-recommends -y \
     traceroute \
+    telnet \
     curl \
     wget \
     iputils-ping \
