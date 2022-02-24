@@ -21,6 +21,7 @@ docker image push wozorio/swiss-army-knife:latest
 ## Run a container interactively on Docker
 
 ```bash
+docker pull wozorio/swiss-army-knife:latest
 docker run --name swiss-army-knife -it --rm wozorio/swiss-army-knife:latest /bin/bash
 ```
 
