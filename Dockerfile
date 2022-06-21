@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:22.04
 
 LABEL author="well.ozorio@gmail.com"
 
