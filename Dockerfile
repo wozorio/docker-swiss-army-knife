@@ -4,7 +4,11 @@ LABEL author="well.ozorio@gmail.com"
 
 WORKDIR /root
 
-RUN apt update \
+ENV TZ="America/Sao_Paulo"
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone \
+    && apt update \
     && apt dist-upgrade -y \
     && apt install --no-install-recommends -y \
     traceroute \
