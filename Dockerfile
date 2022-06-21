@@ -6,8 +6,6 @@ WORKDIR /root
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ENV TZ="America/Sao_Paulo"
-
 RUN apt update \
     && apt dist-upgrade -y \
     && apt install --no-install-recommends -y \
