@@ -2,9 +2,13 @@ FROM ubuntu:22.04
 
 LABEL author="well.ozorio@gmail.com"
 
-WORKDIR /root
+ARG USER=wozorio
 
 ARG DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /home/$USER
+
+RUN useradd --create-home $USER
 
 RUN apt update \
     && apt dist-upgrade -y \
@@ -40,3 +44,5 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY Dockerfile /Dockerfile
+
+USER $USER
