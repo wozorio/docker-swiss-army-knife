@@ -6,8 +6,6 @@ ARG USER=wozorio
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /home/$USER
-
 RUN useradd --create-home $USER
 
 RUN apt update \
@@ -44,5 +42,7 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY Dockerfile /Dockerfile
+
+WORKDIR /home/$USER
 
 USER $USER
