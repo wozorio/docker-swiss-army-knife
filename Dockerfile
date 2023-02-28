@@ -13,6 +13,7 @@ RUN apt update \
     && apt install --no-install-recommends -y \
     traceroute \
     telnet \
+    ca-certificates \
     curl \
     wget \
     iputils-ping \
