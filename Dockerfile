@@ -8,9 +8,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN useradd --create-home $USER
 
-RUN apt update \
-    && apt dist-upgrade -y \
-    && apt install --no-install-recommends -y \
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install --no-install-recommends -y \
     traceroute \
     telnet \
     ca-certificates \
@@ -20,7 +20,7 @@ RUN apt update \
     dnsutils \
     netcat-openbsd \
     jq \
-    nmap \ 
+    nmap \
     net-tools \
     tcpdump \
     mtr-tiny \
@@ -30,16 +30,16 @@ RUN apt update \
     siege \
     apache2-utils \
     openssl \
-    openssh-client \ 
+    openssh-client \
     nvi \
     less \
     # Install tcping
     tcptraceroute \
     bc \
-    && wget http://www.vdberg.org/~richard/tcpping -O /usr/local/bin/tcping \
+    && wget -q http://www.vdberg.org/~richard/tcpping -O /usr/local/bin/tcping \
     && chmod 755 /usr/local/bin/tcping \
     # Clean up cache and temporary files
-    && apt clean \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 COPY Dockerfile /Dockerfile
