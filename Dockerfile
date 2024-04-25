@@ -11,32 +11,32 @@ RUN useradd --create-home $USER
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install --no-install-recommends -y \
-    traceroute \
-    telnet \
+    apache2-utils \
+    bc \
     ca-certificates \
     curl \
-    wget \
-    iputils-ping \
     dnsutils \
-    netcat-openbsd \
-    jq \
-    nmap \
-    net-tools \
-    tcpdump \
-    mtr-tiny \
-    iperf3 \
     git \
+    iperf3 \
     iproute2 \
-    siege \
-    apache2-utils \
+    iputils-ping \
+    jq \
+    less \
+    mtr-tiny \
+    net-tools \
+    netcat-openbsd \
+    nmap \
+    nvi \
     openssl \
     openssh-client \
-    nvi \
-    less \
+    siege \
+    tcpdump \
+    telnet \
+    traceroute \
+    wget \
     # Install tcping
     tcptraceroute \
-    bc \
-    && wget -q http://www.vdberg.org/~richard/tcpping -O /usr/local/bin/tcping \
+    && curl -sSL -o /usr/local/bin/tcping http://www.vdberg.org/~richard/tcpping \
     && chmod 755 /usr/local/bin/tcping \
     # Clean up cache and temporary files
     && apt-get clean \
