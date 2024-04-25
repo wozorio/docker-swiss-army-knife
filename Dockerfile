@@ -3,11 +3,9 @@ FROM ubuntu:24.04
 LABEL author="well.ozorio@gmail.com"
 
 ARG USER=wozorio
-
-ARG DEBIAN_FRONTEND=noninteractive
-
 RUN useradd --create-home $USER
 
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install --no-install-recommends -y \
