@@ -4,19 +4,19 @@ IMAGE = "wozorio/swiss-army-knife:latest"
 # Build the Docker image
 .PHONY: build
 build:
-	@docker build -t $(IMAGE) .
+	@docker build . -f Dockerfile -t $(IMAGE)
 
 # Test the Docker image by running a simple command
 .PHONY: test
 test: build
 	@docker run --name swiss-army-knife -it --rm $(IMAGE) /bin/bash -c "echo 'Hello, World!'"
 
-# Build the Docker image and then run it
+# Build the Docker image and run it interactively on Docker
 .PHONY: run-docker
 run-docker: build
 	@docker run --name swiss-army-knife -it --rm $(IMAGE) /bin/bash
 
-# Build the Docker image and then run it in Kubernetes
+# Build the Docker image and run it interactively on Kubernetes
 .PHONY: run-k8s
 run-k8s: build
 	@kubectl run -it --rm swiss-army-knife --image=$(IMAGE) -- /bin/bash

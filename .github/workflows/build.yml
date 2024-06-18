@@ -23,10 +23,7 @@ jobs:
         uses: hadolint/hadolint-action@v3.1.0
 
       - name: Test building the image
-        run: docker build -t wozorio/swiss-army-knife:latest .
-
-      - name: Run the built image
-        run: docker run --name test-container -d wozorio/swiss-army-knife:latest
+        run: make test
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
@@ -38,14 +35,31 @@ jobs:
           vuln-type: "os,library"
           severity: "HIGH,CRITICAL"
 
+      - name: Save image to a file
+        run: |
+          docker save "wozorio/swiss-army-knife:latest" | gzip > image.tar.gz
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: image
+          path: image.tar.gz
+
   release:
     name: Release
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/master'
+    # if: github.ref == 'refs/heads/master'
 
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: image
+
+      - name: Load image from file
+        run: |
+          docker load < image.tar.gz
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
@@ -53,10 +67,5 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          context: ./
-          file: Dockerfile
-          push: true
-          tags: wozorio/swiss-army-knife:latest
+      - name: Push image to Docker Hub
+        run: docker push "wozorio/swiss-army-knife:latest"
