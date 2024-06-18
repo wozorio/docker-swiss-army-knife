@@ -9,7 +9,7 @@ build:
 # Test the Docker image by running a simple command
 .PHONY: test
 test: build
-	@docker run --name swiss-army-knife -it --rm $(IMAGE) /bin/bash -c "echo 'Hello, World!'"
+	@docker run --name swiss-army-knife --rm $(IMAGE) /bin/bash -c "echo 'Hello, World!'"
 
 # Build the Docker image and run it interactively on Docker
 .PHONY: run-docker
