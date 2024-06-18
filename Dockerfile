@@ -38,7 +38,8 @@ RUN apt-get update \
     && chmod 755 /usr/local/bin/tcping \
     # Clean up cache and temporary files
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/*
 
 COPY Dockerfile /Dockerfile
 
