@@ -1,3 +1,5 @@
+SHELL = /usr/bin/env bash
+
 # The Docker image to be built and run
 IMAGE_TAG = "wozorio/swiss-army-knife:latest"
 
