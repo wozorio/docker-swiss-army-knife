@@ -26,8 +26,10 @@ run-k8s: build
 # Lint the Dockerfile
 .PHONY: lint
 lint:
-	@docker run --rm -i \
-		-v $(PWD)/.hadolint.yaml:/root/.config/hadolint.yaml hadolint/hadolint < Dockerfile
+	@docker run \
+		--interactive \
+		--rm \
+		--volume $(PWD)/.hadolint.yaml:/root/.config/hadolint.yaml hadolint/hadolint < Dockerfile
 
 # Remove the Docker image
 .PHONY: clean
