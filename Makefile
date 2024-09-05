@@ -1,5 +1,7 @@
 SHELL = /usr/bin/env bash
 
+.DEFAULT_GOAL = run-docker
+
 # The Docker image to be built and run
 IMAGE = "wozorio/swiss-army-knife"
 TAG = "latest"
