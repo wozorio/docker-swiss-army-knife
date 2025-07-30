@@ -1,6 +1,6 @@
 FROM ubuntu:24.04
 
-LABEL author="well.ozorio@gmail.com"
+LABEL author="wozorio@duck.com"
 
 ARG USER=wozorio
 RUN useradd --create-home $USER
