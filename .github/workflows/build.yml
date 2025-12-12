@@ -42,7 +42,7 @@ jobs:
         run: |
           docker save ${{ env.IMAGE_TAG }} | gzip > image.tar.gz
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: image
           path: image.tar.gz
