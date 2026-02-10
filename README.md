@@ -30,3 +30,8 @@ docker run --name swiss-army-knife -it --rm wozorio/swiss-army-knife:latest /bin
 ```bash
 kubectl run -it --rm swiss-army-knife --image=wozorio/swiss-army-knife:latest -- /bin/bash
 ```
+
+## Run as an ephemeral container on Kubernetes for troubleshooting
+```bash
+kubectl debug -it <POD> --image=wozorio/swiss-army-knife:latest --target=<CONTAINER> -- sh
+```
