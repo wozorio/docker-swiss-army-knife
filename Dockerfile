@@ -3,7 +3,8 @@ FROM ubuntu:24.04
 LABEL author="wozorio@duck.com"
 
 ARG USER=wozorio
-RUN useradd --create-home $USER
+ARG USERID=1001
+RUN useradd -u $USERID --create-home $USER
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
@@ -45,4 +46,4 @@ COPY ./Dockerfile /
 
 WORKDIR /home/$USER
 
-USER $USER
+USER $USERID
