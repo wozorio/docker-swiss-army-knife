@@ -4,7 +4,7 @@ LABEL author="wozorio@duck.com"
 
 ARG USER=wozorio
 ARG USERID=1001
-RUN useradd -u $USERID --create-home $USER
+RUN useradd -l -u $USERID --create-home $USER
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
