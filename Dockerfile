@@ -8,7 +8,7 @@ RUN useradd -l -u $USERID --create-home $USER
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
-  && apt-get upgrade -y \
+  && apt-get dist-upgrade -y \
   && apt-get install --no-install-recommends -y \
   apache2-utils \
   bc \
